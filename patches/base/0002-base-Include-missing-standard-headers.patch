@@ -1,18 +1,21 @@
-From 898e7e49bf4a629b4cb5a393813b2861e19aa336 Mon Sep 17 00:00:00 2001
+From 24a104999e5178d233d121dacf9633baaf4c6c15 Mon Sep 17 00:00:00 2001
 From: Biswapriyo Nath <nathbappai@gmail.com>
 Date: Wed, 1 Jan 2025 00:00:00 +0000
 Subject: [PATCH] base: Include missing standard headers
 
 ---
- libs/androidfw/ApkParsing.cpp      | 1 +
- libs/androidfw/BigBufferStream.cpp | 3 +++
- libs/androidfw/PngCrunch.cpp       | 3 +++
- tools/aapt2/AppInfo.h              | 2 ++
- tools/aapt2/io/StringStream.cpp    | 4 ++++
- 5 files changed, 13 insertions(+)
+ libs/androidfw/ApkParsing.cpp                 | 1 +
+ libs/androidfw/BigBufferStream.cpp            | 3 +++
+ libs/androidfw/PngCrunch.cpp                  | 3 +++
+ libs/androidfw/ResourceTimer.cpp              | 1 +
+ libs/androidfw/include/androidfw/Asset.h      | 1 +
+ libs/androidfw/include/androidfw/FileStream.h | 1 +
+ tools/aapt2/AppInfo.h                         | 2 ++
+ tools/aapt2/io/StringStream.cpp               | 4 ++++
+ 8 files changed, 16 insertions(+)
 
 diff --git a/libs/androidfw/ApkParsing.cpp b/libs/androidfw/ApkParsing.cpp
-index 7eedfdb5c..d6bf0cf0d 100644
+index b80c8755f23e..3bea69b187f5 100644
 --- a/libs/androidfw/ApkParsing.cpp
 +++ b/libs/androidfw/ApkParsing.cpp
 @@ -18,6 +18,7 @@
@@ -24,7 +27,7 @@ index 7eedfdb5c..d6bf0cf0d 100644
  #include <sys/types.h>
  
 diff --git a/libs/androidfw/BigBufferStream.cpp b/libs/androidfw/BigBufferStream.cpp
-index f18199cfa..03943a681 100644
+index f18199cfa52b..03943a681c84 100644
 --- a/libs/androidfw/BigBufferStream.cpp
 +++ b/libs/androidfw/BigBufferStream.cpp
 @@ -17,6 +17,9 @@
@@ -38,7 +41,7 @@ index f18199cfa..03943a681 100644
  namespace android {
  
 diff --git a/libs/androidfw/PngCrunch.cpp b/libs/androidfw/PngCrunch.cpp
-index cf3c0eeff..93cf715f9 100644
+index e94540544cf5..d1671acfb587 100644
 --- a/libs/androidfw/PngCrunch.cpp
 +++ b/libs/androidfw/PngCrunch.cpp
 @@ -17,7 +17,10 @@
@@ -52,6 +55,30 @@ index cf3c0eeff..93cf715f9 100644
  #include <unordered_map>
  #include <unordered_set>
  
+diff --git a/libs/androidfw/ResourceTimer.cpp b/libs/androidfw/ResourceTimer.cpp
+index 44128d9e4e3d..dd7106fbd5e2 100644
+--- a/libs/androidfw/ResourceTimer.cpp
++++ b/libs/androidfw/ResourceTimer.cpp
+@@ -14,6 +14,7 @@
+  * limitations under the License.
+  */
+ 
++#include <limits.h>
+ #include <unistd.h>
+ #include <string.h>
+ 
+diff --git a/libs/androidfw/include/androidfw/Asset.h b/libs/androidfw/include/androidfw/Asset.h
+index 87dc5a776009..9c24f366557d 100644
+--- a/libs/androidfw/include/androidfw/Asset.h
++++ b/libs/androidfw/include/androidfw/Asset.h
+@@ -25,6 +25,7 @@
+ #include <functional>
+ #include <memory>
+ #include <optional>
++#include <variant>
+ 
+ #include <android-base/unique_fd.h>
+ #include <util/map_ptr.h>
 diff --git a/libs/androidfw/include/androidfw/FileStream.h b/libs/androidfw/include/androidfw/FileStream.h
 index 87c42d12f825..eaccde0d390e 100644
 --- a/libs/androidfw/include/androidfw/FileStream.h
@@ -78,7 +105,7 @@ index cabbe7ea7446..15461a3fa896 100644
  
  // Information relevant to building an app, parsed from the app's AndroidManifest.xml.
 diff --git a/tools/aapt2/io/StringStream.cpp b/tools/aapt2/io/StringStream.cpp
-index bb3911b20..7ca9b4fb0 100644
+index bb3911b20175..7ca9b4fb06c3 100644
 --- a/tools/aapt2/io/StringStream.cpp
 +++ b/tools/aapt2/io/StringStream.cpp
 @@ -16,6 +16,10 @@
@@ -93,5 +120,5 @@ index bb3911b20..7ca9b4fb0 100644
  
  namespace aapt {
 -- 
-2.48.1
+2.55.0
 

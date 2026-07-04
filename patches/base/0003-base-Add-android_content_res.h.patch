@@ -1,24 +1,28 @@
-From 04273ceecce83c5686a8f357cc2d47957527a865 Mon Sep 17 00:00:00 2001
+From 89cde044a77a8d8e8f3df467567e1abc72044e80 Mon Sep 17 00:00:00 2001
 From: Biswapriyo Nath <nathbappai@gmail.com>
 Date: Wed, 1 Jan 2025 00:00:00 +0000
 Subject: [PATCH] base: Add android_content_res.h
 
 ---
- libs/androidfw/include/android_content_res.h | 5 +++++
- 1 file changed, 5 insertions(+)
+ libs/androidfw/include/android_content_res.h | 9 +++++++++
+ 1 file changed, 9 insertions(+)
  create mode 100644 libs/androidfw/include/android_content_res.h
 
 diff --git a/libs/androidfw/include/android_content_res.h b/libs/androidfw/include/android_content_res.h
 new file mode 100644
-index 000000000000..eb7f4a126805
+index 000000000000..a729a98e7017
 --- /dev/null
 +++ b/libs/androidfw/include/android_content_res.h
-@@ -0,0 +1,5 @@
+@@ -0,0 +1,9 @@
 +#pragma once
 +
 +static inline bool android_content_res_resource_readwrite_flags() {
 +	return false;
 +}
++
++static inline int android_content_res_xml_file_size_limit() {
++	return 0;
++}
 -- 
-2.54.0
+2.55.0
 

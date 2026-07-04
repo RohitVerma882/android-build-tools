@@ -2,7 +2,7 @@
 
 set -x
 
-GIT_BRANCH="${1:-"android-16.0.0_r4"}"
+GIT_BRANCH="${1:-"android-17.0.0_r1"}"
 
 cd vendor
 
